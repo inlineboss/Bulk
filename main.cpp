@@ -17,7 +17,7 @@ int main (int, const char **) {
 	Bulk bulk(4);
 
 	while(true){
-			bulk.in(std::cin);
+		bulk.in(std::cin);
 	}
 
 	} catch(...) {
