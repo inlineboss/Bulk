@@ -49,4 +49,4 @@ deploy:
     provider: script
     skip_cleanup: true
     script:
-            - curl -T Editor-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uinlineboss:$BINTRAY_API_KEY "https://api.bintray.com/content/facs/OTUS/Editor/$TRAVIS_BUILD_NUMBER/Editor-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+            - curl -T Bulk-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uinlineboss:$BINTRAY_API_KEY "https://api.bintray.com/content/facs/OTUS/Bulk/$TRAVIS_BUILD_NUMBER/Bulk-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
