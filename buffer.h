@@ -6,6 +6,9 @@
 
 #include "out.h"
 
+/**
+ * @brief
+ */
 class Buffer: public Out {
 public:
 	Buffer();
@@ -14,16 +17,42 @@ public:
 
 	Buffer(const std::string str);
 
+	/**
+	 * @brief Замена команды
+	 *
+	 * @param cmd - новая команда
+	 */
 	void reset (const std::string& cmd);
 
+	/**
+	 * @brief Удалить комманду
+	 */
 	void cls ();
 
+	/**
+	 * @brief Вывод хранимой комманды
+	 */
 	void out () override;
 
-	void size ();
+	/**
+	 * @brief Получение размера команды
+	 *
+	 * @return Размер
+	 */
+	std::size_t size ();
 
+	/**
+	 * @brief Получение комманды
+	 *
+	 * @return Комманды
+	 */
 	std::string get_data();
 
+	/**
+	 * @brief Получить время ввода комманды
+	 *
+	 * @return Время
+	 */
 	std::time_t get_time ();
 private:
 

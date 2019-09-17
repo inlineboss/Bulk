@@ -1,24 +1,21 @@
-#include <vector>
-#include <list>
-#include <string>
-#include <iostream>
-#include <memory>
-#include <ctime>
-
-#include <fstream>
-#include <sstream>
-
 #include "bulk.h"
 
-int main (int, const char **) {
+#include <iostream>
+#include <string>
+
+int main (int argc, const char* argv[]) {
 
 	try {
 
-	Bulk bulk(4);
+		if(argc > 1) {
 
-	while(true){
-		bulk.in(std::cin);
-	}
+			Bulk bulk( std::stoi(argv[1]) );
+
+			while(true){
+				bulk.in(std::cin);
+			}
+
+		}
 
 	} catch(...) {
 

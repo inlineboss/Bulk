@@ -4,6 +4,9 @@
 #include <string>
 #include <fstream>
 
+/**
+ * @brief Хранилище комманд
+ */
 template<typename T>
 class Storage {
 public:
@@ -13,6 +16,11 @@ public:
 		T data;
 	};
 
+	/**
+	 * @brief Добавление элемента
+	 *
+	 * @param data - Элемент
+	 */
 	void add (const T& data) {
 
 		if (Head == nullptr) {
@@ -34,6 +42,11 @@ public:
 		++count_object;
 	}
 
+	/**
+	 * @brief Получение элемента
+	 *
+	 * @param numb - Элемент
+	 */
 	T& operator[](std::size_t numb) {
 
 		Node* Index = Head;
@@ -49,6 +62,9 @@ public:
 		return Index->data;
 	}
 
+	/**
+	 * @brief Очистка хранилища
+	 */
 	void clear () {
 
 		while (Head != nullptr) {
@@ -63,17 +79,32 @@ public:
 		Head = Tail = nullptr;
 		count_object = 0;
 	}
-
+	/**
+	 * @brief Получить колличество элементов
+	 *
+	 * @return Колличество элементов
+	 */
 	std::size_t size() {
 		return count_object;
 	}
 
+	/**
+	 * @brief Получить последний элемент
+	 *
+	 * @return Последний элемент
+	 */
 	T& last () { return Tail->data;	}
 
 	~Storage() {
 		clear();
 	}
 
+	/**
+	 * @brief Сохранение (логирование) хранилища
+	 *
+	 * @param path Путь сохранения
+	 * @param name Имя файла
+	 */
 	void save_log(std::string path, std::string name) {
 
 		if( Head == nullptr ) {
@@ -95,7 +126,8 @@ private:
 	Node* Head = nullptr;
 
 	std::size_t count_object {0};
-};
+
+};//class Storage
 
 
 

@@ -24,8 +24,9 @@ void Buffer::out () {
 	std::cout << data ;
 }
 
-void Buffer::size () {
-	data.size();
+std::size_t Buffer::size () {
+
+	return data.size();
 }
 
 std::string Buffer::get_data() {
